@@ -17,17 +17,20 @@ jobs:
         node-version: 20
         cache: 'npm'
         
-    - name: Fix file permissions
-      run: chmod +x ./node_modules/.bin/* ./scripts/* || true
-      
     - name: Install dependencies
       run: npm install --unsafe-perm
+    
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
       
     - name: Run the Program
       run: npm run start &
 
     - name: Run server
       run: npm run server &
+
+    - name: Wait for Server to Start
+      run: sleep 10
       
     - name: Run integration tests
-      run: npm run test
+      run: npx playwright test
