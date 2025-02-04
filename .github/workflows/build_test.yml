@@ -19,6 +19,25 @@ jobs:
 
     - name: Fix file permissions
       run: chmod +x ./node_modules/.bin/* || true
+
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          libasound2 \
+          libicu72 \
+          libffi8 \
+          libx264-164 \
+          libnss3 \
+          libatk1.0-0 \
+          libatk-bridge2.0-0 \
+          libgbm1 \
+          libgtk-3-0 \
+          libxcomposite1 \
+          libxdamage1 \
+          libxfixes3 \
+          libxrandr2 \
+          libpangocairo-1.0-0
         
     - name: Install dependencies
       run: npm install --unsafe-perm
