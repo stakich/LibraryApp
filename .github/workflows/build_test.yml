@@ -22,12 +22,12 @@ jobs:
 
     - name: Install System Dependencies
       run: |
-        sudo apt-get update
+        sudo apt-get update --allow-releaseinfo-change
         sudo apt-get install -y \
-          libasound2 \
-          libicu72 \
-          libffi8 \
-          libx264-164 \
+          libasound2t64 \
+          libicu-dev \
+          libffi-dev \
+          libx264-dev \
           libnss3 \
           libatk1.0-0 \
           libatk-bridge2.0-0 \
