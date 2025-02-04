@@ -26,5 +26,7 @@ jobs:
     - name: Run the Program
       run: npm run start &
       
+    - name: Install playwright correct
+      run: npx playwright install
     - name: Run integration tests
       run: npm run test
