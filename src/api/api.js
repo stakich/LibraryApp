@@ -1,7 +1,7 @@
 export const settings = {
     host: '',
 };
-# DDDDDDDD
+# DFASDAFAWD
 async function request(url, options) {
     try {
         const response = await fetch(url, options);
